@@ -59,7 +59,26 @@
       }
     }
   </script>
-</head>
+<style>
+@media (max-width: 600px) {
+  .game label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .game div label {
+    display: block !important;
+    margin-bottom: 0.5rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100% !important;
+  }
+  form > div:last-of-type {
+    margin: 0 1rem;
+  }
+}
+</style></head>
 <body style="margin:0; font-family:'Inter',sans-serif; background:#0f0f0f; color:#fff;">
 <header style="background:linear-gradient(90deg,#22c55e,#16a34a);padding:2rem;text-align:center;">
 <h1 style="font-size:2.5rem;color:#0f0f0f;margin:0;">Bolão do DuCampelo</h1>
@@ -168,16 +187,6 @@
 <label style="margin-right: 1rem;"><input name="jogo10" style="accent-color:#22c55e; margin-right:0.4rem;" type="radio" value="rb bragantino"/> RB Bragantino</label>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 <br/>
 <br/>
 <br/>
