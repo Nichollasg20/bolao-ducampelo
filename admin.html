@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Admin - Bolão do DuCampelo</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #22c55e;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #444;
+      text-align: center;
+    }
+    th {
+      background-color: #1f1f1f;
+    }
+    #login {
+      max-width: 400px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    #login input {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    #login button {
+      padding: 10px 20px;
+      background-color: #22c55e;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h2>Admin - Bolão do DuCampelo</h2>
+    <input type="password" id="senha" placeholder="Digite a senha de admin" />
+    <button onclick="verificarSenha()">Entrar</button>
+    <p id="erro" style="color: red;"></p>
+  </div>
+
+  <div id="painel" style="display: none;">
+    <h1>Painel de Palpites</h1>
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Celular</th>
+          <th>Palpites</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyARgq28IdLF-8YknxFX7ki3Pd2pYOc_TaI",
+      authDomain: "bolao-do-ducampelo.firebaseapp.com",
+      projectId: "bolao-do-ducampelo",
+      storageBucket: "bolao-do-ducampelo.appspot.com",
+      messagingSenderId: "866506501920",
+      appId: "1:866506501920:web:76a62a3440cf07298f7145"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function carregarPalpites() {
+      const querySnapshot = await getDocs(collection(db, "palpites"));
+      const tbody = document.querySelector("#tabela tbody");
+      tbody.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${data.nome || ""}</td>
+          <td>${data.email || ""}</td>
+          <td>${data.celular || ""}</td>
+          <td>${[...Array(10)].map((_, i) => data["jogo" + (i + 1)] || "-").join(" | ")}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.verificarSenha = function () {
+      const senha = document.getElementById("senha").value;
+      const erro = document.getElementById("erro");
+      if (senha === "admin123") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("painel").style.display = "block";
+        carregarPalpites();
+      } else {
+        erro.textContent = "Senha incorreta!";
+      }
+    };
+  </script>
+</body>
+</html>
