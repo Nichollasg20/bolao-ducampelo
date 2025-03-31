@@ -287,5 +287,42 @@
       window.location.href = "confirmacao.html";
     }
   </script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyARgq28IdLF-8YknxFX7ki3Pd2pYOc_TaI",
+    authDomain: "bolao-do-ducampelo.firebaseapp.com",
+    projectId: "bolao-do-ducampelo",
+    storageBucket: "bolao-do-ducampelo.appspot.com",
+    messagingSenderId: "866506501920",
+    appId: "1:866506501920:web:76a62a3440cf07298f7145"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function enviarPalpites(e) {
+    e.preventDefault();
+    const data = {
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      celular: document.getElementById('celular').value
+    };
+    for (let i = 1; i <= 10; i++) {
+      const escolha = document.querySelector(`input[name="jogo${i}"]:checked`);
+      if (escolha) {
+        data[`jogo${i}`] = escolha.value;
+      }
+    }
+    await addDoc(collection(db, "palpites"), data);
+    window.location.href = "confirmacao.html";
+  }
+
+  document.querySelector("form").addEventListener("submit", enviarPalpites);
+</script>
+
 </body>
 </html>
