@@ -2,270 +2,290 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bolão do DuCampelo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
+      padding: 0;
     }
     header {
-      background: linear-gradient(90deg, #22c55e, #16a34a);
-      padding: 2rem;
+      background: linear-gradient(to right, #00c853, #00e676);
+      padding: 20px;
       text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #0f0f0f;
-      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
     }
     .hero {
-      padding: 3rem 1rem;
       text-align: center;
+      padding: 30px 20px;
     }
     .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 26px;
+      margin-bottom: 10px;
     }
     .hero p {
-      font-size: 1.1rem;
-      color: #d4d4d4;
-      max-width: 600px;
-      margin: 0 auto 2rem;
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.6;
     }
-    .btn {
-      background-color: #22c55e;
-      color: #0f0f0f;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
+    .cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .cta a {
+      background: #00e676;
+      color: black;
+      padding: 15px 30px;
       font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background-color: #16a34a;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 18px;
     }
     .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem 1rem;
-      gap: 2rem;
+      padding: 40px 20px;
     }
-    .card {
-      background-color: #1c1c1c;
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 300px;
+    .feature {
+      background: #1a1a1a;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 16px;
+      max-width: 500px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+      box-shadow: 0 0 8px #00e67633;
     }
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .card p {
-      color: #a3a3a3;
-      font-size: 1rem;
+    .feature h3 {
+      margin-top: 0;
     }
     .form-section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .form-section h2 {
+      padding: 30px 20px;
       text-align: center;
-      margin-bottom: 2rem;
     }
     .game {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background-color: #1a1a1a;
-      border-radius: 1rem;
+      background: #222;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 16px;
+      text-align: left;
     }
-    .game label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    .game .options {
+    .options {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 8px;
     }
-    .form-group {
-      margin: 1rem auto;
+    .options label {
+      flex: 1;
       text-align: center;
     }
+    .form-group {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .form-group input {
-      display: block;
-      width: 90%;
-      margin: 0.5rem auto;
-      padding: 0.8rem;
-      border-radius: 0.5rem;
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 12px;
+      border-radius: 8px;
       border: none;
+      font-size: 16px;
     }
     .submit-btn {
-      display: block;
-      margin: 2rem auto 0;
-      background-color: #22c55e;
-      color: #0f0f0f;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
+      background: #00e676;
       border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
+      color: black;
       font-weight: bold;
+      font-size: 18px;
+      padding: 14px 0;
+      border-radius: 12px;
+      width: 100%;
+      cursor: pointer;
     }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      color: #525252;
+      font-size: 14px;
+      padding: 20px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Bolão do DuCampelo</h1>
-  </header>
+  <header>Bolão do DuCampelo</header>
+
   <section class="hero">
     <h2>Tenha mais acertos. Leve a bolada.</h2>
-    <p>Participe do desafio mais emocionante do futebol!<br>
-    Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. Quem tiver mais acertos leva!</p>
-    <button class="btn" onclick="document.getElementById('palpites').scrollIntoView({behavior: 'smooth'});">Participar Agora</button>
+    <p>
+      Participe do desafio mais emocionante do futebol!<br/>
+      Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. <br/>
+      Quem tiver mais acertos leva!
+    </p>
+    <div class="cta">
+      <a href="#form">Participar Agora</a>
+    </div>
   </section>
+
   <section class="features">
-    <div class="card">
+    <div class="feature">
       <h3>R$ 20 por Entrada</h3>
       <p>Baixo custo de entrada, alto potencial de prêmio. Quanto mais gente, maior a premiação.</p>
     </div>
-    <div class="card">
+    <div class="feature">
       <h3>10 Jogos da Série A</h3>
       <p>Escolha os resultados das partidas e prove que você entende de futebol de verdade.</p>
     </div>
-    <div class="card">
+    <div class="feature">
       <h3>60% para o Campeão</h3>
       <p>Quem tiver mais acertos leva a maior parte da grana. O resto vai para a casa.</p>
     </div>
   </section>
-  <section id="palpites" class="form-section">
+
+  <section id="form" class="form-section">
     <h2>Escolha seus palpites</h2>
-    <form>
+    <form onsubmit="enviarPalpites(event)">
       
     <div class="game">
-      <label>1. Time A x Time B</label>
+      <label>1. Palmeiras x Flamengo</label>
       <div class="options">
-        <label><input type="radio" name="jogo1" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo1" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo1" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo1" value="Palmeiras" required> Palmeiras</label>
+        <label><input type="radio" name="jogo1" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo1" value="Flamengo"> Flamengo</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>2. Time A x Time B</label>
+      <label>2. Corinthians x Grêmio</label>
       <div class="options">
-        <label><input type="radio" name="jogo2" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo2" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo2" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo2" value="Corinthians" required> Corinthians</label>
+        <label><input type="radio" name="jogo2" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo2" value="Grêmio"> Grêmio</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>3. Time A x Time B</label>
+      <label>3. São Paulo x Cruzeiro</label>
       <div class="options">
-        <label><input type="radio" name="jogo3" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo3" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo3" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo3" value="São Paulo" required> São Paulo</label>
+        <label><input type="radio" name="jogo3" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo3" value="Cruzeiro"> Cruzeiro</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>4. Time A x Time B</label>
+      <label>4. Vasco x Botafogo</label>
       <div class="options">
-        <label><input type="radio" name="jogo4" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo4" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo4" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo4" value="Vasco" required> Vasco</label>
+        <label><input type="radio" name="jogo4" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo4" value="Botafogo"> Botafogo</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>5. Time A x Time B</label>
+      <label>5. Santos x Bahia</label>
       <div class="options">
-        <label><input type="radio" name="jogo5" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo5" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo5" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo5" value="Santos" required> Santos</label>
+        <label><input type="radio" name="jogo5" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo5" value="Bahia"> Bahia</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>6. Time A x Time B</label>
+      <label>6. Internacional x Athletico-PR</label>
       <div class="options">
-        <label><input type="radio" name="jogo6" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo6" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo6" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo6" value="Internacional" required> Internacional</label>
+        <label><input type="radio" name="jogo6" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo6" value="Athletico-PR"> Athletico-PR</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>7. Time A x Time B</label>
+      <label>7. Fluminense x Atlético-MG</label>
       <div class="options">
-        <label><input type="radio" name="jogo7" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo7" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo7" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo7" value="Fluminense" required> Fluminense</label>
+        <label><input type="radio" name="jogo7" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo7" value="Atlético-MG"> Atlético-MG</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>8. Time A x Time B</label>
+      <label>8. Fortaleza x Cuiabá</label>
       <div class="options">
-        <label><input type="radio" name="jogo8" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo8" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo8" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo8" value="Fortaleza" required> Fortaleza</label>
+        <label><input type="radio" name="jogo8" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo8" value="Cuiabá"> Cuiabá</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>9. Time A x Time B</label>
+      <label>9. Goiás x América-MG</label>
       <div class="options">
-        <label><input type="radio" name="jogo9" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo9" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo9" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo9" value="Goiás" required> Goiás</label>
+        <label><input type="radio" name="jogo9" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo9" value="América-MG"> América-MG</label>
       </div>
     </div>
     
-
     <div class="game">
-      <label>10. Time A x Time B</label>
+      <label>10. Coritiba x RB Bragantino</label>
       <div class="options">
-        <label><input type="radio" name="jogo10" value="timea" required> Time A</label>
-        <label><input type="radio" name="jogo10" value="empate"> Empate</label>
-        <label><input type="radio" name="jogo10" value="timeb"> Time B</label>
+        <label><input type="radio" name="jogo10" value="Coritiba" required> Coritiba</label>
+        <label><input type="radio" name="jogo10" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo10" value="RB Bragantino"> RB Bragantino</label>
       </div>
     </div>
     
       <div class="form-group">
-        <input type="text" placeholder="Nome completo" required>
-        <input type="email" placeholder="E-mail" required>
-        <input type="tel" placeholder="Celular com DDD" required>
+        <input type="text" id="nome" placeholder="Nome completo" required>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <input type="tel" id="celular" placeholder="Celular com DDD" required>
         <button class="submit-btn" type="submit">Confirmar Palpites</button>
       </div>
     </form>
   </section>
-  <footer>
-    <p>&copy; 2025 Bolão do DuCampelo. Todos os direitos reservados.</p>
-  </footer>
+
+  <footer>&copy; 2025 Bolão do DuCampelo. Todos os direitos reservados.</footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyARgq28IdLF-8YknxFX7ki3Pd2pYOc_TaI",
+      authDomain: "bolao-do-ducampelo.firebaseapp.com",
+      projectId: "bolao-do-ducampelo",
+      storageBucket: "bolao-do-ducampelo.appspot.com",
+      messagingSenderId: "866506501920",
+      appId: "1:866506501920:web:76a62a3440cf07298f7145"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function enviarPalpites(e) {
+      e.preventDefault();
+      const data = {
+        nome: document.getElementById('nome').value,
+        email: document.getElementById('email').value,
+        celular: document.getElementById('celular').value
+      };
+      for (let i = 1; i <= 10; i++) {
+        const escolha = document.querySelector(`input[name="jogo${i}"]:checked`);
+        if (escolha) {
+          data[`jogo${i}`] = escolha.value;
+        }
+      }
+      await addDoc(collection(db, "palpites"), data);
+      window.location.href = "confirmacao.html";
+    }
+  </script>
 </body>
 </html>
