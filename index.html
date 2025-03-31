@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bolão do DuCampelo</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -24,7 +24,7 @@
       margin: 0;
     }
     .hero {
-      padding: 3rem 1rem 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
     .hero h2 {
@@ -34,9 +34,8 @@
     .hero p {
       font-size: 1.1rem;
       color: #d4d4d4;
-      max-width: 90%;
+      max-width: 600px;
       margin: 0 auto 2rem;
-      line-height: 1.6;
     }
     .btn {
       background-color: #22c55e;
@@ -74,7 +73,6 @@
     .card p {
       color: #a3a3a3;
       font-size: 1rem;
-      line-height: 1.5;
     }
     .form-section {
       padding: 2rem;
@@ -92,14 +90,24 @@
       border-radius: 1rem;
     }
     .game label {
-      margin-right: 1rem;
+      display: block;
+      margin-bottom: 0.5rem;
       font-weight: 600;
     }
     .game div {
-      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-    .game input {
-      margin-right: 0.5rem;
+    .form-field {
+      background-color: #1a1a1a;
+      border: none;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      color: #fff;
+      width: 100%;
+      box-sizing: border-box;
     }
     .submit-btn {
       display: block;
@@ -126,10 +134,49 @@
   </header>
   <section class="hero">
     <h2>Tenha mais acertos. Leve a bolada.</h2>
-    <p>Participe do desafio mais emocionante do futebol!<br />
-    Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado.<br />
-    Quem tiver mais acertos leva!</p>
+    <p>
+      Participe do desafio mais emocionante do futebol!<br />
+      Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. Quem tiver mais acertos leva!
+    </p>
     <button class="btn" onclick="document.getElementById('palpites').scrollIntoView({behavior: 'smooth'});">Participar Agora</button>
   </section>
+  <section class="features">
+    <div class="card">
+      <h3>R$ 20 por Entrada</h3>
+      <p>Baixo custo de entrada, alto potencial de prêmio. Quanto mais gente, maior a premiação.</p>
+    </div>
+    <div class="card">
+      <h3>10 Jogos da Série A</h3>
+      <p>Escolha os resultados das partidas e prove que você entende de futebol de verdade.</p>
+    </div>
+    <div class="card">
+      <h3>60% para o Campeão</h3>
+      <p>Quem tiver mais acertos leva a maior parte da grana. O resto vai para a casa.</p>
+    </div>
+  </section>
+  <section id="palpites" class="form-section">
+    <h2>Escolha seus palpites</h2>
+    <form>
+      <!-- 10 jogos -->
+      ${"
+".join([f'''
+      <div class="game">
+        <label>{i+1}. Jogo {i+1}</label>
+        <div>
+          <label><input type="radio" name="jogo{i+1}" value="timeA"> Time A</label>
+          <label><input type="radio" name="jogo{i+1}" value="empate"> Empate</label>
+          <label><input type="radio" name="jogo{i+1}" value="timeB"> Time B</label>
+        </div>
+      </div>
+      ''' for i in range(10)])}
+      <input type="text" placeholder="Nome completo" class="form-field" required />
+      <input type="email" placeholder="E-mail" class="form-field" required />
+      <input type="text" placeholder="Celular com DDD" class="form-field" required />
+      <button class="submit-btn" type="submit">Confirmar Palpites</button>
+    </form>
+  </section>
+  <footer>
+    <p>&copy; 2025 Bolão do DuCampelo. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
