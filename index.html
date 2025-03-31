@@ -74,6 +74,59 @@
       color: #a3a3a3;
       font-size: 1rem;
     }
+    .form-section {
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: #1a1a1a;
+      border-radius: 1rem;
+    }
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .game {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: #141414;
+      border-radius: 1rem;
+    }
+    .game label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .game div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .game input {
+      margin-right: 0.5rem;
+    }
+    .form-input {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #0f0f0f;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .submit-btn {
+      display: block;
+      margin: 2rem auto 0;
+      background-color: #22c55e;
+      color: #0f0f0f;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -88,7 +141,7 @@
   <section class="hero">
     <h2>Tenha mais acertos. Leve a bolada.</h2>
     <p>Participe do desafio mais emocionante do futebol! Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. Quem tiver mais acertos leva!</p>
-    <button class="btn">Participar Agora</button>
+    <button class="btn" onclick="document.getElementById('palpites').scrollIntoView({behavior: 'smooth'});">Participar Agora</button>
   </section>
   <section class="features">
     <div class="card">
@@ -103,6 +156,32 @@
       <h3>60% para o Campeão</h3>
       <p>Quem tiver mais acertos leva a maior parte da grana. O resto vai para a casa.</p>
     </div>
+  </section>
+  <section id="palpites" class="form-section">
+    <h2>Escolha seus palpites</h2>
+    <form>
+      <!-- Apenas 2 jogos para exemplo -->
+      <div class="game">
+        <label>1. Palmeiras x Flamengo</label>
+        <div>
+          <label><input type="radio" name="jogo1" value="palmeiras" />Palmeiras</label>
+          <label><input type="radio" name="jogo1" value="empate" />Empate</label>
+          <label><input type="radio" name="jogo1" value="flamengo" />Flamengo</label>
+        </div>
+      </div>
+      <div class="game">
+        <label>2. Corinthians x Grêmio</label>
+        <div>
+          <label><input type="radio" name="jogo2" value="corinthians" />Corinthians</label>
+          <label><input type="radio" name="jogo2" value="empate" />Empate</label>
+          <label><input type="radio" name="jogo2" value="gremio" />Grêmio</label>
+        </div>
+      </div>
+      <input class="form-input" type="text" placeholder="Nome completo" required />
+      <input class="form-input" type="email" placeholder="E-mail" required />
+      <input class="form-input" type="tel" placeholder="Celular com DDD" required />
+      <button class="submit-btn" type="submit">Confirmar Palpites</button>
+    </form>
   </section>
   <footer>
     <p>&copy; 2025 Bolão do DuCampelo. Todos os direitos reservados.</p>
