@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -90,24 +89,26 @@
       border-radius: 1rem;
     }
     .game label {
+      font-weight: 600;
       display: block;
       margin-bottom: 0.5rem;
-      font-weight: 600;
     }
-    .game div {
+    .game .options {
       display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .form-field {
-      background-color: #1a1a1a;
+    .form-group {
+      margin: 1rem auto;
+      text-align: center;
+    }
+    .form-group input {
+      display: block;
+      width: 90%;
+      margin: 0.5rem auto;
+      padding: 0.8rem;
+      border-radius: 0.5rem;
       border: none;
-      border-radius: 0.75rem;
-      padding: 1rem;
-      margin-top: 1rem;
-      color: #fff;
-      width: 100%;
-      box-sizing: border-box;
     }
     .submit-btn {
       display: block;
@@ -134,10 +135,8 @@
   </header>
   <section class="hero">
     <h2>Tenha mais acertos. Leve a bolada.</h2>
-    <p>
-      Participe do desafio mais emocionante do futebol!<br />
-      Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. Quem tiver mais acertos leva!
-    </p>
+    <p>Participe do desafio mais emocionante do futebol!<br>
+    Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. Quem tiver mais acertos leva!</p>
     <button class="btn" onclick="document.getElementById('palpites').scrollIntoView({behavior: 'smooth'});">Participar Agora</button>
   </section>
   <section class="features">
@@ -157,22 +156,112 @@
   <section id="palpites" class="form-section">
     <h2>Escolha seus palpites</h2>
     <form>
-      <!-- 10 jogos -->
-      ${"
-".join([f'''
-      <div class="game">
-        <label>{i+1}. Jogo {i+1}</label>
-        <div>
-          <label><input type="radio" name="jogo{i+1}" value="timeA"> Time A</label>
-          <label><input type="radio" name="jogo{i+1}" value="empate"> Empate</label>
-          <label><input type="radio" name="jogo{i+1}" value="timeB"> Time B</label>
-        </div>
+      
+    <div class="game">
+      <label>1. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo1" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo1" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo1" value="timeb"> Time B</label>
       </div>
-      ''' for i in range(10)])}
-      <input type="text" placeholder="Nome completo" class="form-field" required />
-      <input type="email" placeholder="E-mail" class="form-field" required />
-      <input type="text" placeholder="Celular com DDD" class="form-field" required />
-      <button class="submit-btn" type="submit">Confirmar Palpites</button>
+    </div>
+    
+
+    <div class="game">
+      <label>2. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo2" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo2" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo2" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>3. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo3" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo3" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo3" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>4. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo4" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo4" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo4" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>5. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo5" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo5" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo5" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>6. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo6" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo6" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo6" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>7. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo7" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo7" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo7" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>8. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo8" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo8" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo8" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>9. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo9" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo9" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo9" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+
+    <div class="game">
+      <label>10. Time A x Time B</label>
+      <div class="options">
+        <label><input type="radio" name="jogo10" value="timea" required> Time A</label>
+        <label><input type="radio" name="jogo10" value="empate"> Empate</label>
+        <label><input type="radio" name="jogo10" value="timeb"> Time B</label>
+      </div>
+    </div>
+    
+      <div class="form-group">
+        <input type="text" placeholder="Nome completo" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="tel" placeholder="Celular com DDD" required>
+        <button class="submit-btn" type="submit">Confirmar Palpites</button>
+      </div>
     </form>
   </section>
   <footer>
