@@ -2,189 +2,201 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bolão do DuCampelo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
       background-color: #0f0f0f;
-      color: #fff;
-    }
-    header {
-      background: linear-gradient(90deg, #22c55e, #16a34a);
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #0f0f0f;
+      font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
+      color: white;
     }
-    .hero {
-      padding: 3rem 1rem;
+    header, footer {
       text-align: center;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #d4d4d4;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .btn {
-      background-color: #22c55e;
-      color: #0f0f0f;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
+      padding: 1rem;
       background-color: #16a34a;
+      color: black;
+      font-weight: bold;
     }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem 1rem;
-      gap: 2rem;
-    }
-    .card {
-      background-color: #1c1c1c;
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 300px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
-    }
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .card p {
-      color: #a3a3a3;
-      font-size: 1rem;
-    }
-    .form-section {
-      padding: 2rem;
+    .container {
+      padding: 1rem;
       max-width: 600px;
-      margin: 2rem auto;
-      background-color: #1a1a1a;
-      border-radius: 1rem;
+      margin: auto;
     }
-    .form-section h2 {
+    .hero, .features {
       text-align: center;
       margin-bottom: 2rem;
     }
-    .game {
-      margin-bottom: 1.5rem;
+    .features .card {
+      background-color: #1a1a1a;
       padding: 1rem;
-      background-color: #141414;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+    form {
+      background-color: #1a1a1a;
+      padding: 1rem;
       border-radius: 1rem;
     }
+    .game {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background: #141414;
+      border-radius: 0.5rem;
+    }
     .game label {
-      font-weight: 600;
+      font-weight: bold;
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
-    .game div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .game input {
-      margin-right: 0.5rem;
-    }
-    .form-input {
+    .options label {
       display: block;
+      margin-left: 1rem;
+    }
+    input[type="text"], input[type="email"], input[type="tel"] {
       width: 100%;
-      padding: 0.8rem;
-      margin-top: 1rem;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
       border-radius: 0.5rem;
       border: none;
       background-color: #0f0f0f;
-      color: #fff;
-      font-size: 1rem;
+      color: white;
     }
-    .submit-btn {
-      display: block;
-      margin: 2rem auto 0;
+    button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1rem;
       background-color: #22c55e;
-      color: #0f0f0f;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
+      color: black;
       border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
       font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #525252;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Bolão do DuCampelo</h1>
-  </header>
-  <section class="hero">
-    <h2>Tenha mais acertos. Leve a bolada.</h2>
-    <p>Participe do desafio mais emocionante do futebol! Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. Quem tiver mais acertos leva!</p>
-    <button class="btn" onclick="document.getElementById('palpites').scrollIntoView({behavior: 'smooth'});">Participar Agora</button>
-  </section>
-  <section class="features">
-    <div class="card">
-      <h3>R$ 20 por Entrada</h3>
-      <p>Baixo custo de entrada, alto potencial de prêmio. Quanto mais gente, maior a premiação.</p>
-    </div>
-    <div class="card">
-      <h3>10 Jogos da Série A</h3>
-      <p>Escolha os resultados das partidas e prove que você entende de futebol de verdade.</p>
-    </div>
-    <div class="card">
-      <h3>60% para o Campeão</h3>
-      <p>Quem tiver mais acertos leva a maior parte da grana. O resto vai para a casa.</p>
-    </div>
-  </section>
-  <section id="palpites" class="form-section">
-    <h2>Escolha seus palpites</h2>
+  <header>Bolão do DuCampelo</header>
+  <div class="container">
+    <section class="hero">
+      <h2>Tenha mais acertos. Leve a bolada.</h2>
+      <p>Participe do desafio mais emocionante do futebol! Pague R$ 20, aposte em 10 jogos da Série A e concorra a 60% do valor total arrecadado. Quem tiver mais acertos leva!</p>
+    </section>
+    <section class="features">
+      <div class="card">
+        <h3>R$ 20 por Entrada</h3>
+        <p>Baixo custo de entrada, alto potencial de prêmio. Quanto mais gente, maior a premiação.</p>
+      </div>
+      <div class="card">
+        <h3>10 Jogos da Série A</h3>
+        <p>Escolha os resultados das partidas e prove que você entende de futebol de verdade.</p>
+      </div>
+      <div class="card">
+        <h3>60% para o Campeão</h3>
+        <p>Quem tiver mais acertos leva a maior parte da grana. O resto vai para a casa.</p>
+      </div>
+    </section>
     <form>
-      <!-- Apenas 2 jogos para exemplo -->
-      <div class="game">
-        <label>1. Palmeiras x Flamengo</label>
-        <div>
-          <label><input type="radio" name="jogo1" value="palmeiras" />Palmeiras</label>
-          <label><input type="radio" name="jogo1" value="empate" />Empate</label>
-          <label><input type="radio" name="jogo1" value="flamengo" />Flamengo</label>
-        </div>
+
+    <div class="game">
+      <label>1. Palmeiras x Flamengo</label>
+      <div class="options">
+        <label><input type="radio" name="jogo1" value="Palmeiras"> Palmeiras</label>
+        <label><input type="radio" name="jogo1" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo1" value="Flamengo"> Flamengo</label>
       </div>
-      <div class="game">
-        <label>2. Corinthians x Grêmio</label>
-        <div>
-          <label><input type="radio" name="jogo2" value="corinthians" />Corinthians</label>
-          <label><input type="radio" name="jogo2" value="empate" />Empate</label>
-          <label><input type="radio" name="jogo2" value="gremio" />Grêmio</label>
-        </div>
+    </div>
+    
+    <div class="game">
+      <label>2. Corinthians x Grêmio</label>
+      <div class="options">
+        <label><input type="radio" name="jogo2" value="Corinthians"> Corinthians</label>
+        <label><input type="radio" name="jogo2" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo2" value="Grêmio"> Grêmio</label>
       </div>
-      <input class="form-input" type="text" placeholder="Nome completo" required />
-      <input class="form-input" type="email" placeholder="E-mail" required />
-      <input class="form-input" type="tel" placeholder="Celular com DDD" required />
-      <button class="submit-btn" type="submit">Confirmar Palpites</button>
+    </div>
+    
+    <div class="game">
+      <label>3. São Paulo x Cruzeiro</label>
+      <div class="options">
+        <label><input type="radio" name="jogo3" value="São Paulo"> São Paulo</label>
+        <label><input type="radio" name="jogo3" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo3" value="Cruzeiro"> Cruzeiro</label>
+      </div>
+    </div>
+    
+    <div class="game">
+      <label>4. Vasco x Botafogo</label>
+      <div class="options">
+        <label><input type="radio" name="jogo4" value="Vasco"> Vasco</label>
+        <label><input type="radio" name="jogo4" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo4" value="Botafogo"> Botafogo</label>
+      </div>
+    </div>
+    
+    <div class="game">
+      <label>5. Santos x Bahia</label>
+      <div class="options">
+        <label><input type="radio" name="jogo5" value="Santos"> Santos</label>
+        <label><input type="radio" name="jogo5" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo5" value="Bahia"> Bahia</label>
+      </div>
+    </div>
+    
+    <div class="game">
+      <label>6. Internacional x Athletico-PR</label>
+      <div class="options">
+        <label><input type="radio" name="jogo6" value="Internacional"> Internacional</label>
+        <label><input type="radio" name="jogo6" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo6" value="Athletico-PR"> Athletico-PR</label>
+      </div>
+    </div>
+    
+    <div class="game">
+      <label>7. Fluminense x Atlético-MG</label>
+      <div class="options">
+        <label><input type="radio" name="jogo7" value="Fluminense"> Fluminense</label>
+        <label><input type="radio" name="jogo7" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo7" value="Atlético-MG"> Atlético-MG</label>
+      </div>
+    </div>
+    
+    <div class="game">
+      <label>8. Fortaleza x Cuiabá</label>
+      <div class="options">
+        <label><input type="radio" name="jogo8" value="Fortaleza"> Fortaleza</label>
+        <label><input type="radio" name="jogo8" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo8" value="Cuiabá"> Cuiabá</label>
+      </div>
+    </div>
+    
+    <div class="game">
+      <label>9. Goiás x América-MG</label>
+      <div class="options">
+        <label><input type="radio" name="jogo9" value="Goiás"> Goiás</label>
+        <label><input type="radio" name="jogo9" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo9" value="América-MG"> América-MG</label>
+      </div>
+    </div>
+    
+    <div class="game">
+      <label>10. Coritiba x RB Bragantino</label>
+      <div class="options">
+        <label><input type="radio" name="jogo10" value="Coritiba"> Coritiba</label>
+        <label><input type="radio" name="jogo10" value="Empate"> Empate</label>
+        <label><input type="radio" name="jogo10" value="RB Bragantino"> RB Bragantino</label>
+      </div>
+    </div>
+    
+    <input type="text" placeholder="Nome completo" required>
+    <input type="email" placeholder="E-mail" required>
+    <input type="tel" placeholder="Celular com DDD" required>
+    <button type="submit">Confirmar Palpites</button>
     </form>
-  </section>
-  <footer>
-    <p>&copy; 2025 Bolão do DuCampelo. Todos os direitos reservados.</p>
-  </footer>
+  </div>
+  <footer>© 2025 Bolão do DuCampelo. Todos os direitos reservados.</footer>
 </body>
 </html>
